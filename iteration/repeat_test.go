@@ -1,6 +1,7 @@
 package iteration
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -16,4 +17,10 @@ func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat("a", 4)
 	}
+}
+
+func ExampleRepeat() {
+	repeated := Repeat("b", 6)
+	fmt.Println(repeated)
+	// Output: bbbbbb
 }
