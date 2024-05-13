@@ -6,9 +6,11 @@ import (
 
 const spanish = "Spanish"
 const french = "French"
+const norsk = "Norsk"
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
 const frenchHelloPrefix = "Bonjour, "
+const norskHelloPrefix = "Hallaisen, "
 
 func Hello(name string, language string) (helloMessage string) {
 	if name == "" {
@@ -22,6 +24,8 @@ func Hello(name string, language string) (helloMessage string) {
 		prefix = spanishHelloPrefix
 	case french:
 		prefix = frenchHelloPrefix
+	case norsk:
+		prefix = norskHelloPrefix
 	}
 	return prefix + name
 }
