@@ -11,7 +11,8 @@ func (w *Wallet) Deposit(amount int) {
 	fmt.Println("address of wallet balance in Deposit method is", &w.balance)
 }
 
-func (w Wallet) Balance() int {
+// pointer used for consistency, not needed in this case
+func (w *Wallet) Balance() int {
 	fmt.Printf("address of wallet balance in Balance method is %p \n", &w.balance)
 	return w.balance
 }
