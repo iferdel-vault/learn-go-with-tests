@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestRectanglePerimeter(t *testing.T) {
+func TestPerimeter(t *testing.T) {
 	rectangle := Rectangle{1.0, 2.0}
 	got := Perimeter(rectangle)
 	want := 6.0
