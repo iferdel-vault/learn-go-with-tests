@@ -4,9 +4,9 @@ import (
 	"testing"
 )
 
-func TestPerimeter(t *testing.T) {
-	got := Perimeter(1.0, 2.0)
-	want := 6.0
+func TestArea(t *testing.T) {
+	got := Area(1.0, 2.0)
+	want := 2.0
 
 	if got != want {
 		t.Errorf("got '%0.2f' want '%0.2f'", got, want)
