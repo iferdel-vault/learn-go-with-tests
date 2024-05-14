@@ -2,6 +2,7 @@ package main
 
 import (
 	"testing"
+    "math"
 )
 
 func TestPerimeter(t *testing.T) {
@@ -15,7 +16,7 @@ func TestPerimeter(t *testing.T) {
 	t.Run("Circles", func(t *testing.T) {
 		circle := Circle{2.0}
 		got := circle.Perimeter()
-		want := 6.28
+		want := 2.0 * math.Pi
 		assertCorrectComputation(t, got, want)
 	})
 }
@@ -30,7 +31,7 @@ func TestArea(t *testing.T) {
 	t.Run("Circles", func(t *testing.T) {
 		circle := Circle{2.0}
 		got := circle.Area()
-		want := 12.56
+		want := 2.0 * 2.0 * math.Pi
 		assertCorrectComputation(t, got, want)
 	})
 }
