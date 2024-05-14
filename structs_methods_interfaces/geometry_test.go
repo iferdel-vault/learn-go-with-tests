@@ -1,8 +1,8 @@
 package main
 
 import (
+	"math"
 	"testing"
-    "math"
 )
 
 func TestPerimeter(t *testing.T) {
@@ -22,6 +22,13 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
+
+	checkArea := func(t testing.TB, shape Shape, want float64) {
+		t.Helper()
+		got := shape.Area()
+		assertCorrectComputation(t, got, want)
+	}
+
 	t.Run("Rectangles", func(t *testing.T) {
 		rectangle := Rectangle{1.0, 2.0}
 		got := rectangle.Area()
