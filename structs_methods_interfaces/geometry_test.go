@@ -22,23 +22,19 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-
-	checkArea := func(t testing.TB, shape Shape, want float64) {
-		t.Helper()
-		got := shape.Area()
+	// table driven tests
+	areaTest := []struct {
+		shape Shape
+		want  float64
+	}{
+		{Rectangle{1.0, 2.0}, 2.0},
+		{Circle{2.0}, 2.0 * 2.0 * math.Pi},
+	}
+	for _, tt := range areaTest {
+		got := tt.shape.Area()
+		want := tt.want
 		assertCorrectComputation(t, got, want)
 	}
-
-	t.Run("Rectangles", func(t *testing.T) {
-		rectangle := Rectangle{1.0, 2.0}
-		want := 2.0
-		checkArea(t, rectangle, want)
-	})
-	t.Run("Circles", func(t *testing.T) {
-		circle := Circle{2.0}
-		want := 2.0 * 2.0 * math.Pi
-		checkArea(t, circle, want)
-	})
 }
 
 func assertCorrectComputation(t testing.TB, got, want float64) {
