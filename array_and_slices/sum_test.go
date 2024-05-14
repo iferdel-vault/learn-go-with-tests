@@ -1,6 +1,7 @@
 package main
 
 import (
+	"slices"
 	"testing"
 )
 
@@ -11,6 +12,25 @@ func TestSum(t *testing.T) {
 		want := 6
 		assertCorrectSum(t, got, want, numbers)
 	})
+}
+
+func TestSumAllTails(t *testing.T) {
+	t.Run("Perform sum of tails across multiple slices saving each one into new slice",
+		func(t *testing.T) {
+			got := SumAllTails([]int{1, 3}, []int{4, 4, 2})
+			want := []int{3, 6}
+			if !slices.Equal(got, want) {
+				t.Errorf("got %v want %v", got, want)
+			}
+		})
+    t.Run("safely sum empty slices",
+    func(t *testing.T) {
+            got := SumAllTails([]int{}, []int{4, 4, 2})
+            want := []int{0, 6}
+            if !slices.Equal(got, want) {
+				t.Errorf("got %v want %v", got, want)
+            }
+    })
 }
 
 func assertCorrectSum(t testing.TB, got, want int, numbers []int) {
