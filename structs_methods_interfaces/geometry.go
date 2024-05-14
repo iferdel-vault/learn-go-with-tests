@@ -3,7 +3,6 @@ package main
 import "math"
 
 type Shape interface {
-	Perimeter() float64
 	Area() float64
 }
 
@@ -30,4 +29,13 @@ func (c Circle) Perimeter() float64 {
 
 func (c Circle) Area() float64 {
 	return c.Radius * c.Radius * math.Pi
+}
+
+type Triangle struct {
+	Base   float64
+	Heigth float64
+}
+
+func (t Triangle) Area() float64 {
+	return (t.Base * t.Heigth) / 2
 }
