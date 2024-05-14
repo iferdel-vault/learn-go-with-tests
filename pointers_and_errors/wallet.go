@@ -6,7 +6,7 @@ type Wallet struct {
 	balance int
 }
 
-func (w Wallet) Deposit(amount int) {
+func (w *Wallet) Deposit(amount int) {
 	w.balance += amount
 	fmt.Println("address of wallet balance in Deposit method is", &w.balance)
 }
