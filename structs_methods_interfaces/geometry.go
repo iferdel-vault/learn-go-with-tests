@@ -2,13 +2,14 @@ package main
 
 import "math"
 
+type Shape interface {
+	Perimeter() float64
+	Area() float64
+}
+
 type Rectangle struct {
 	Width  float64
 	Height float64
-}
-
-type Circle struct {
-	Radius float64
 }
 
 func (r Rectangle) Perimeter() float64 {
@@ -17,6 +18,10 @@ func (r Rectangle) Perimeter() float64 {
 
 func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
+}
+
+type Circle struct {
+	Radius float64
 }
 
 func (c Circle) Perimeter() float64 {

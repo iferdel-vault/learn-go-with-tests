@@ -31,15 +31,13 @@ func TestArea(t *testing.T) {
 
 	t.Run("Rectangles", func(t *testing.T) {
 		rectangle := Rectangle{1.0, 2.0}
-		got := rectangle.Area()
 		want := 2.0
-		assertCorrectComputation(t, got, want)
+		checkArea(t, rectangle, want)
 	})
 	t.Run("Circles", func(t *testing.T) {
 		circle := Circle{2.0}
-		got := circle.Area()
 		want := 2.0 * 2.0 * math.Pi
-		assertCorrectComputation(t, got, want)
+		checkArea(t, circle, want)
 	})
 }
 
