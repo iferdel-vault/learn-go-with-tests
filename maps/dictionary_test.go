@@ -5,8 +5,8 @@ import (
 )
 
 func TestDictionary(t *testing.T) {
-	dictionary := map[string]string{"test": "this is a test"}
-	got := Search(dictionary, "test")
+	dictionary := Dictionary{"test": "this is a test"}
+	got := dictionary.Search("test")
 	want := "this is a test"
 
 	assertStrings(t, got, want)
