@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -34,12 +35,23 @@ func assertError(t testing.TB, got, want error) {
 }
 
 func TestAdd(t *testing.T) {
+    t.Run("new word", func (t *testing.T) {
 	dictionary := Dictionary{}
 	word := "test"
 	definition := "this is a test"
 
 	dictionary.Add(word, definition)
 	assertDefinition(t, dictionary, word, definition)
+    })
+
+    t.Run("existing word", func (t *testing.T) {
+	word := "test"
+	definition := "this is a test"
+    dictionary := Dictionary{word: definition}
+    fmt.Println("printing dictionary with data", dictionary)
+        
+
+    })
 }
 
 func assertDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
